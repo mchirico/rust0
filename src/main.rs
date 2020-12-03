@@ -19,7 +19,7 @@ fn first_word(s: &String) -> usize {
     s.len()
 }
 
-fn main() -> std::io::Result<()> {
+fn main()  {
     println!("Hello, world!");
     let s1 = String::from("hello");
     let len = calculate_length(&s1);
@@ -34,7 +34,12 @@ fn main() -> std::io::Result<()> {
 
     println!("{}", first_word(&s));
 
-    fs::write("data.dat", s)
+
+    let file = String::from("data.dat");
+    match fs::write(file, s) {
+        Err(why) => panic!("couldn't write: {}",why),
+        Ok(_) => println!("successfully wrote to data.dat"),
+    }
 
 
 
