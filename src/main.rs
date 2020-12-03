@@ -1,5 +1,6 @@
 use std::fs;
 
+mod folder;
 mod mytest;
 
 fn calculate_length(s: &String) -> usize {
@@ -28,6 +29,16 @@ fn main() -> std::io::Result<()> {
     println!("{}", calculate_length(&s));
     println!("{}", first_word(&s));
 
+    folder::function();
+
+
+    println!("{}", first_word(&s));
+
     fs::write("data.dat", s)
+
+
+
+
+
 }
 
